@@ -9,13 +9,15 @@ def jogar():
     acertou = False
 
     while (not enforcou and not acertou):
-        print("Jogando")
+        chute = input("Digite um letra: ").strip().lower()
+        pos = 0
 
-    print("Fim de jogo")
+        for letra in palavra_secreta:
+            if(letra == chute):
+                print("A letra \"{}\" está na posição: {}".format(chute, pos))
+            pos = pos + 1
+            
+        print("\nSegue o jogo...\n")
 
 if(__name__ == "__main__"):
     jogar()
-
-    # Fazer a captura da letra digitada pelo jogador
-    # Tratar maiuscula e minuscula
-    # Mostrar onde a letra digitada está (posição)
