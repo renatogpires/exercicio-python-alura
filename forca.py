@@ -4,6 +4,13 @@ def jogar():
     print("******************************")
 
     palavra_secreta = "banana"
+    tamanho_palavra = len(palavra_secreta)
+    letra_posicao = []
+
+    for i in range(tamanho_palavra):
+        letra_posicao.append("_")
+    
+    print("Essa é a palavra a ser adivinhada: {}".format(letra_posicao))
 
     enforcou = False
     acertou = False
@@ -11,13 +18,17 @@ def jogar():
     while (not enforcou and not acertou):
         chute = input("Digite um letra: ").strip().lower()
         pos = 0
-
+        
         for letra in palavra_secreta:
             if(letra == chute):
-                print("A letra \"{}\" está na posição: {}".format(chute, pos))
+                letra_posicao[pos] = chute
             pos = pos + 1
             
-        print("\nSegue o jogo...\n")
+        print(letra_posicao)
+
+        ## Implantar o enforcou ou acertou
 
 if(__name__ == "__main__"):
     jogar()
+
+    
